@@ -1,7 +1,8 @@
 import Footer from "../components/Footer";
 import ScrollTop from "../components/ScrollToTop";
 import { FaEnvelope, FaLock } from "react-icons/fa";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
+import onboarding from "../assets/onboarding.svg";
 
 export default function Login() {
   return (
@@ -12,18 +13,18 @@ export default function Login() {
           {/* LEFT SIDE IMAGE WITH OVERLAY */}
           <div className="relative h-[550px] lg:h-auto">
             <img
-              src="/food.jpg"
+              src={onboarding}
               alt="Nigerian Food"
               className="w-full h-full object-cover"
             />
 
             {/* ORANGE OVERLAY */}
-            <div className="absolute inset-0 bg-orange-500/85 flex flex-col justify-center items-center text-center px-10">
+            <div className="absolute inset-0 bg-orange-500/70 flex flex-col justify-center items-center text-center px-10">
               <h1 className="text-3xl md:text-4xl font-bold text-white">
                 Chuks Kitchen
               </h1>
 
-              <p className="mt-6 text-white text-sm md:text-base max-w-md leading-relaxed">
+              <p className="mt-6 text-white text-sm md:text-base max-w-md leading-relaxed font-semibold">
                 Your journey to delicious, authentic Nigerian meals starts here.
                 Sign up or log in to order your favorites today!
               </p>
@@ -53,6 +54,7 @@ export default function Login() {
                   <div className="relative">
                     <FaEnvelope className="absolute left-3 top-3 text-gray-400 text-sm" />
                     <input
+                      required
                       type="text"
                       placeholder="name@gmail.com"
                       className="w-full border border-gray-300 rounded-md py-2.5 pl-10 pr-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
@@ -69,6 +71,7 @@ export default function Login() {
                   <div className="relative">
                     <FaLock className="absolute left-3 top-3 text-gray-400 text-sm" />
                     <input
+                      required
                       type="password"
                       placeholder="••••••"
                       className="w-full border border-gray-300 rounded-md py-2.5 pl-10 pr-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
@@ -76,12 +79,12 @@ export default function Login() {
                   </div>
 
                   <div className="text-right mt-2">
-                    <a
-                      href="#"
+                    <Link to="#"
+                      
                       className="text-xs text-blue-600 hover:underline"
                     >
                       Forgot Password?
-                    </a>
+                    </Link>
                   </div>
                 </div>
 

@@ -1,9 +1,11 @@
 import Footer from "../components/Footer";
 import ScrollTop from "../components/ScrollToTop";
-import { FaEnvelope, FaPhone, FaLock, FaEye } from "react-icons/fa";
+import { FaEnvelope, FaPhone, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 import {Link} from 'react-router-dom'
+import onboarding from "../assets/onboarding.svg"
 
 export default function Signup() {
+
   return (
     <div className="bg-gray-100 min-h-screen flex justify-center p-4">
       <div className="w-full max-w-7xl bg-white shadow-xl overflow-hidden">
@@ -12,12 +14,12 @@ export default function Signup() {
           {/* LEFT IMAGE WITH ORANGE OVERLAY */}
           <div className="relative h-[600px] lg:h-auto">
             <img
-              src="/food.jpg"
+              src={onboarding}
               alt="Nigerian Food"
               className="w-full h-full object-cover"
             />
 
-            <div className="absolute inset-0 bg-orange-500/85 flex flex-col justify-center items-center text-center px-10">
+            <div className="absolute inset-0 bg-orange-500/75 flex flex-col justify-center items-center text-center px-10">
               <h1 className="text-3xl md:text-4xl font-bold text-white">
                 Chuks Kitchen
               </h1>
@@ -53,6 +55,7 @@ export default function Signup() {
                     <input
                       type="email"
                       placeholder="name@gmail.com"
+                      required
                       className="w-full border border-gray-300 rounded-md py-2.5 pl-10 pr-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
                     />
                   </div>
@@ -68,6 +71,7 @@ export default function Signup() {
                     <FaPhone className="absolute left-3 top-3 text-gray-400 text-sm" />
                     <input
                       type="text"
+                      required
                       placeholder="8123340690"
                       className="w-full border border-gray-300 rounded-md py-2.5 pl-10 pr-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
                     />
@@ -83,11 +87,13 @@ export default function Signup() {
                   <div className="relative">
                     <FaLock className="absolute left-3 top-3 text-gray-400 text-sm" />
                     <input
+                    required
                       type="password"
                       placeholder="QWE123##"
                       className="w-full border border-gray-300 rounded-md py-2.5 pl-10 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
                     />
-                    <FaEye className="absolute right-3 top-3 text-gray-400 text-sm cursor-pointer" />
+                    {onclick ?  <FaEye className="absolute right-3 top-3 text-gray-400 text-sm cursor-pointer" /> : <FaEyeSlash />}
+                   
                   </div>
                 </div>
 
@@ -100,6 +106,7 @@ export default function Signup() {
                   <div className="relative">
                     <FaLock className="absolute left-3 top-3 text-gray-400 text-sm" />
                     <input
+                    required
                       type="password"
                       placeholder="QWE123##"
                       className="w-full border border-gray-300 rounded-md py-2.5 pl-10 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"

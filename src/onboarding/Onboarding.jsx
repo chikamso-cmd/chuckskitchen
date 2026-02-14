@@ -2,6 +2,7 @@ import Feature from "../components/Feature";
 import Footer from "../components/Footer";
 import ScrollTop from "../components/ScrollTop";
 import { FaUtensils, FaTruck, FaStore } from "react-icons/fa";
+import onboarding from '../assets/onboarding.svg'
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
           {/* LEFT IMAGE */}
           <div className="h-[520px] lg:h-auto">
             <img
-              src="/food.jpg"
+              src={onboarding}
               alt="Nigerian food"
               className="w-full h-full object-cover"
             />
