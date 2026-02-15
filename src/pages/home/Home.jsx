@@ -107,7 +107,7 @@ export default function Home() {
               offer!
             </p>
             <button className="bg-orange-500 text-white px-5 py-2 rounded mt-5 cursor-pointer hover:bg-orange-600 transition-colors ease-in-out duration-500 font-medium">
-              Discover new menu
+              Discover what's new
             </button>
           </div>
         </section>

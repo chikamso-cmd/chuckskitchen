@@ -1,10 +1,14 @@
+import { useState } from "react";
 import Footer from "../components/Footer";
 import ScrollTop from "../components/ScrollToTop";
 import { FaEnvelope, FaPhone, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
-import {Link} from 'react-router-dom'
-import onboarding from "../assets/onboarding.svg"
+import { Link } from "react-router-dom";
+import onboarding from "../assets/onboarding.svg";
+import { BsGoogle, BsApple } from "react-icons/bs";
 
 export default function Signup() {
+  const [showPassword, setShowPassword] = useState(false);
+  const [showPasswordConfirm, setShowConfirmPassword] = useState(false);
 
   return (
     <div className="bg-gray-100 min-h-screen flex justify-center p-4">
@@ -87,13 +91,18 @@ export default function Signup() {
                   <div className="relative">
                     <FaLock className="absolute left-3 top-3 text-gray-400 text-sm" />
                     <input
-                    required
-                      type="password"
+                      required
+                      type={showPassword ? "text" : "password"}
                       placeholder="QWE123##"
                       className="w-full border border-gray-300 rounded-md py-2.5 pl-10 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
                     />
-                    {onclick ?  <FaEye className="absolute right-3 top-3 text-gray-400 text-sm cursor-pointer" /> : <FaEyeSlash />}
-                   
+                    <button
+                      type="button"
+                      className="absolute right-2.5 top-1/2 transform -translate-y-1/2 bg-transparent border-none cursor-pointer text-gray-500"
+                      onClick={() => setShowPassword(!showPassword)}
+                    >
+                      {showPassword ? <FaEye /> : <FaEyeSlash />}
+                    </button>
                   </div>
                 </div>
 
@@ -106,12 +115,20 @@ export default function Signup() {
                   <div className="relative">
                     <FaLock className="absolute left-3 top-3 text-gray-400 text-sm" />
                     <input
-                    required
-                      type="password"
+                      required
+                      type={showPasswordConfirm ? "text" : "password"}
                       placeholder="QWE123##"
                       className="w-full border border-gray-300 rounded-md py-2.5 pl-10 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
                     />
-                    <FaEye className="absolute right-3 top-3 text-gray-400 text-sm cursor-pointer" />
+                    <button
+                      type="button"
+                      className="absolute right-2.5 top-1/2 transform -translate-y-1/2 bg-transparent border-none cursor-pointer text-gray-500"
+                      onClick={() =>
+                        setShowConfirmPassword(!showPasswordConfirm)
+                      }
+                    >
+                      {showPasswordConfirm ? <FaEye /> : <FaEyeSlash />}
+                    </button>
                   </div>
                 </div>
 
@@ -120,13 +137,13 @@ export default function Signup() {
                   <input type="checkbox" className="mt-1 accent-orange-500" />
                   <p>
                     I agree to the{" "}
-                    <a href="#" className="text-blue-600 hover:underline">
+                    <Link to="#" className="text-blue-600 hover:underline">
                       Terms & Conditions
-                    </a>{" "}
+                    </Link>{" "}
                     and{" "}
-                    <a href="#" className="text-blue-600 hover:underline">
+                    <Link to="#" className="text-blue-600 hover:underline">
                       Privacy Policy
-                    </a>
+                    </Link>
                   </p>
                 </div>
 
@@ -143,16 +160,17 @@ export default function Signup() {
                 {/* SOCIAL BUTTONS */}
                 <button
                   type="button"
-                  className="w-full border border-gray-300 py-2.5 rounded-md text-sm hover:bg-gray-50 transition"
+                  className="w-full border border-gray-300 py-2.5 rounded-md text-sm hover:bg-gray-50 transition flex items-center gap-3 justify-center"
                 >
+                  <BsGoogle />
                   Continue with Google
                 </button>
 
                 <button
                   type="button"
-                  className="w-full border border-gray-300 py-2.5 rounded-md text-sm hover:bg-gray-50 transition"
+                  className="w-full border border-gray-300 py-2.5 rounded-md text-sm hover:bg-gray-50 transition flex items-center gap-3 justify-center"
                 >
-                  Continue with Apple
+                   <BsApple /> Continue with Apple
                 </button>
 
                 {/* LOGIN LINK */}

@@ -1,10 +1,12 @@
+import {useState} from 'react'
 import Footer from "../components/Footer";
 import ScrollTop from "../components/ScrollToTop";
-import { FaEnvelope, FaLock } from "react-icons/fa";
+import { FaEnvelope, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import onboarding from "../assets/onboarding.svg";
 
 export default function Login() {
+  const [showPassword, setShowPassword] = useState (false)
   return (
     <div className="bg-gray-100 min-h-screen flex justify-center p-4">
       <div className="w-full max-w-7xl bg-white shadow-xl overflow-hidden">
@@ -72,15 +74,22 @@ export default function Login() {
                     <FaLock className="absolute left-3 top-3 text-gray-400 text-sm" />
                     <input
                       required
-                      type="password"
+                      type={showPassword ? "text" : "password"}
                       placeholder="••••••"
                       className="w-full border border-gray-300 rounded-md py-2.5 pl-10 pr-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
                     />
+                    <button
+                      type="button"
+                      className="absolute right-2.5 top-1/2 transform -translate-y-1/2 bg-transparent border-none cursor-pointer text-gray-500"
+                      onClick={() => setShowPassword(!showPassword)}
+                    >
+                      {showPassword ? <FaEye /> : <FaEyeSlash />}
+                    </button>
                   </div>
 
                   <div className="text-right mt-2">
-                    <Link to="#"
-                      
+                    <Link
+                      to="#"
                       className="text-xs text-blue-600 hover:underline"
                     >
                       Forgot Password?
