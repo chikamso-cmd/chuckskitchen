@@ -7,7 +7,7 @@ export default function ScrollTop() {
   return (
     <button
       onClick={scrollToTop}
-      className="fixed bottom-6 right-6 bg-orange-400 hover:bg-orange-600 text-white p-3 rounded-full shadow-lg transition"
+      className="fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition"
     >
       <FaArrowUp size={14} />
     </button>

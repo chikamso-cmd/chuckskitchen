@@ -16,7 +16,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="bg-white shadow-sm px-6 md:px-16 py-4 flex justify-between items-center relative z-50">
+      <nav className="bg-white shadow-sm px-6 md:px-16 py-4 flex justify-between items-center fixed w-full z-50">
         {/* Logo */}
         <h1 className="text-orange-500 italic font-semibold">Chuks Kitchen</h1>
 
@@ -102,12 +102,13 @@ export default function Navbar() {
                   </NavLink>
                 ))}
 
-                <button
-                  onClick={() => setIsOpen(false)}
-                  className="mt-6 bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-md transition"
-                >
-                  Login
-                </button>
+                <Link to="/login">
+                  <button
+                    className="mt-6 bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-md transition w-full "
+                  >
+                    Login
+                  </button>
+                </Link>
               </div>
             </motion.div>
           </>

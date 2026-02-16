@@ -16,7 +16,7 @@ export default function Signup() {
         {/* HERO SECTION */}
         <div className="grid lg:grid-cols-2">
           {/* LEFT IMAGE WITH ORANGE OVERLAY */}
-          <div className="relative h-[600px] lg:h-auto">
+          <div className="relative h-[600px] lg:h-auto hidden md:flex">
             <img
               src={onboarding}
               alt="Nigerian Food"

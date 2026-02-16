@@ -8,6 +8,7 @@ import swallow from "../../assets/swallow.svg";
 import grills from "../../assets/grills.svg";
 import sweet from "../../assets/sweet.svg";
 import { Chefscategory } from "../../components/Constants";
+import {Link} from "react-router-dom" 
 
 export default function Home() {
   return (
@@ -19,7 +20,7 @@ export default function Home() {
         {/* Background Image */}
         <div
           className="h-[420px] bg-cover bg-center"
-          style={{ backgroundImage: "url('/hero-food.jpg')" }}
+          style={{ backgroundImage: "url('/assets/')" }}
         >
           <div className="absolute inset-0 bg-black/50"></div>
         </div>
@@ -66,6 +67,10 @@ export default function Home() {
           <CategoryCard title="Jollof Delights" image={grills} />
           <CategoryCard title="Jollof Delights" image={jollofs} />
         </div>
+        <p className="text-center mt-8 text-blue-400">
+          {" "}
+          <Link to="/categories">View All Categories</Link>
+        </p>
         {/*  CHEFS SPECIAL CATEGORIES SECTION */}
         <h1 className="text-center mt-20">Chefs Special</h1>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-5">
@@ -94,10 +99,15 @@ export default function Home() {
             </div>
           ))}
         </div>
+        <p className="text-center mt-8 text-blue-400">
+          {" "}
+          <Link to="/categories">View All Categories</Link>
+        </p>
         {/* NEW MENU SECTION */}
         <section>
-          <div className="mt-10 w-full image py-20 px-10 text-white">
+          <div className="mt-10 w-full image py-20 px-5 md:px-10 text-white relative">
             {/* <img src={jollofs} alt="" className="w-100" /> */}
+            {/* <div className="bg-black/50 absolute z-10"></div> */}
             <h1 className="font-bold text-[32px] py-4">
               Introducing Our New Menu Additions!
             </h1>

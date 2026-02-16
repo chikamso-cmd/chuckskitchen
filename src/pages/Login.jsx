@@ -13,7 +13,7 @@ export default function Login() {
         {/* HERO SECTION */}
         <div className="grid lg:grid-cols-2">
           {/* LEFT SIDE IMAGE WITH OVERLAY */}
-          <div className="relative h-[550px] lg:h-auto">
+          <div className="relative h-[550px] lg:h-auto hidden md:flex">
             <img
               src={onboarding}
               alt="Nigerian Food"
