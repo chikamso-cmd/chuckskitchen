@@ -1,15 +1,14 @@
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ScrollTop from "../../components/ScrollToTop";
-import {
-  JollofRices,
-  popularproducts,
-  productcategories,
-  Swallow_Soup,
-} from "../../components/Constants";
+import { productcategories } from "../../components/Constants";
 import { Link } from "react-router-dom";
+import Popular from "../../components/categories/Popular";
+import Jollof from "../../components/categories/Jollof";
+import Swallow from "../../components/categories/Swallow";
+import NewAdditionBanner from "../../components/NewAdditionBanner";
 
-export default function Home() {
+export default function Categories() {
   return (
     <div className="bg-gray-100 min-h-screen">
       <Navbar />
@@ -17,11 +16,12 @@ export default function Home() {
       {/* HERO SECTION */}
       <div className="relative">
         {/* Background Image */}
-        <div
-          className="h-[420px] bg-cover bg-center"
-          style={{ backgroundImage: "url('/assets/')" }}
-        >
-          <div className="absolute inset-0 bg-black/50"></div>
+        <div className="h-[420px] bg-cover bg-center hero">
+          {/* <img
+            src="https://res.cloudinary.com/dfcr3ut7b/image/upload/v1771271262/1a88f71f96c9b980f6e0e126c827db7ea7079001_z7xm05.png"
+            alt="Hero Image"
+          /> */}
+          <div className="absolute inset-0 bg-black/50  "></div>
         </div>
 
         {/* Hero Content */}
@@ -36,7 +36,7 @@ export default function Home() {
         </div>
       </div>
       {/* menu categories dropdown */}
-      <div className="px-5 mt-5">
+      <div className="px-5 mt-5 md:px-16">
         <p className="py-4 font-medium text-[26px] md:text-[32px]">
           Menu Categories
         </p>
@@ -61,35 +61,8 @@ export default function Home() {
         <h2 className="text-center text-gray-800 font-semibold text-lg mb-10">
           Popular Categories
         </h2>
+        <Popular />
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {popularproducts.map((popularproduct) => (
-            <div
-              key={popularproduct.id}
-              className="bg-white rounded-lg p-2 flex md:flex-col md:p-5 items-center gap-5 py-3"
-            >
-              <div className="w-20 h-20 rounded-md md:w-full md:h-auto">
-                {popularproduct.image && (
-                  <img src={popularproduct.img} alt="" className="w-full" />
-                )}
-              </div>
-              <div>
-                <h2 className="font-bold text-[20px]">
-                  {popularproduct.title}
-                </h2>
-                <p>{popularproduct.description}</p>
-                <div className="flex justify-between items-center mt-3">
-                  <p className="text-orange-500 font-medium">
-                    {popularproduct.price}
-                  </p>
-                  <button className="rounded-full bg-amber-500 text-white px-1.5 cursor-pointer text-center font-medium">
-                    +
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
         <p className="text-center mt-8 text-blue-400">
           {" "}
           <Link to="/categories">View All Categories</Link>
@@ -99,30 +72,7 @@ export default function Home() {
         <h2 className="text-center text-gray-800 font-semibold text-lg mb-10 mt-10">
           Jollof Rice & Entrees
         </h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-5">
-          {JollofRices.map((jollof) => (
-            <div
-              key={jollof.id}
-              className="bg-white rounded-lg p-2 flex md:flex-col md:p-5 items-center gap-5 py-3"
-            >
-              <div className="w-20 h-20 rounded-md md:w-full md:h-auto">
-                {jollof.image && (
-                  <img src={jollof.img} alt="" className="w-full" />
-                )}
-              </div>
-              <div>
-                <h2 className="font-bold text-[20px]">{jollof.title}</h2>
-                <p>{jollof.description}</p>
-                <div className="flex justify-between items-center mt-3">
-                  <p className="text-orange-500 font-medium">{jollof.price}</p>
-                  <button className="rounded-full bg-amber-500 text-white px-1.5 cursor-pointer text-center font-medium">
-                    +
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        <Jollof />
         <p className="text-center mt-8 text-blue-400">
           {" "}
           <Link to="#">View All Categories</Link>
@@ -132,52 +82,13 @@ export default function Home() {
         <h2 className="text-center text-gray-800 font-semibold text-lg mb-10 mt-10">
           Swallow & Soup
         </h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-5">
-          {Swallow_Soup.map((swallow) => (
-            <div
-              key={swallow.id}
-              className="bg-white rounded-lg p-2 flex md:flex-col md:p-5 items-center gap-5 py-3"
-            >
-              <div className="w-20 h-20 rounded-md md:w-full md:h-auto">
-                {swallow.image && (
-                  <img src={swallow.img} alt="" className="w-full" />
-                )}
-              </div>
-              <div>
-                <h2 className="font-bold text-[20px]">{swallow.title}</h2>
-                <p>{swallow.description}</p>
-                <div className="flex justify-between items-center mt-3">
-                  <p className="text-orange-500 font-medium">{swallow.price}</p>
-                  <button className="rounded-full bg-amber-500 text-white px-1.5 cursor-pointer text-center font-medium">
-                    +
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        <Swallow />
         <p className="text-center mt-8 text-blue-400">
           {" "}
           <Link to="#">View All Categories</Link>
         </p>
         {/* NEW MENU SECTION */}
-        <section>
-          <div className="mt-10 w-full image py-20 px-5 md:px-10 text-white relative">
-            {/* <img src={jollofs} alt="" className="w-100" /> */}
-            {/* <div className="bg-black/50 absolute z-10"></div> */}
-            <h1 className="font-bold text-[32px] py-4">
-              Introducing Our New Menu Additions!
-            </h1>
-            <p className="font-semibold">
-              Explore exciting new dishes, crafted with the freshest <br />{" "}
-              ingridients and authentic Nigerian flavours, limited time <br />
-              offer!
-            </p>
-            <button className="bg-orange-500 text-white px-5 py-2 rounded mt-5 cursor-pointer hover:bg-orange-600 transition-colors ease-in-out duration-500 font-medium">
-              Discover what's new
-            </button>
-          </div>
-        </section>
+        <NewAdditionBanner />
       </div>
       {/* FOOTER */}
       <Footer />

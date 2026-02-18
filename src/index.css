@@ -6,14 +6,22 @@
   background-position: center;
   background-size: cover;
   width: 100%;
-  position: relative;
+  height: 30rem;
 }
-.image::before {
-  content: "";
-  position: absolute;
+.hero {
+  background: url(https://res.cloudinary.com/dfcr3ut7b/image/upload/v1771271262/1a88f71f96c9b980f6e0e126c827db7ea7079001_z7xm05.png)
+    no-repeat;
+  background-position: center;
+  background-size: cover;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.219);
-  top: 0;
-  z-index: 999;
-  left: 0;
+  height: 603px;
 }
+.hero1 {
+  background: url(https://res.cloudinary.com/dfcr3ut7b/image/upload/v1771271269/ac04492104ce9181b9d37ce45eedfae9f04020a7_hhzdzc.png)
+    no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 941px;
+}
+

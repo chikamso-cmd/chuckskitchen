@@ -9,6 +9,7 @@ import grills from "../../assets/grills.svg";
 import sweet from "../../assets/sweet.svg";
 import { Chefscategory } from "../../components/Constants";
 import {Link} from "react-router-dom" 
+import NewAdditionBanner from "../../components/NewAdditionBanner";
 
 export default function Home() {
   return (
@@ -18,10 +19,7 @@ export default function Home() {
       {/* HERO SECTION */}
       <div className="relative">
         {/* Background Image */}
-        <div
-          className="h-[420px] bg-cover bg-center"
-          style={{ backgroundImage: "url('/assets/')" }}
-        >
+        <div className="h-[420px] bg-cover bg-center hero1">
           <div className="absolute inset-0 bg-black/50"></div>
         </div>
 
@@ -75,28 +73,30 @@ export default function Home() {
         <h1 className="text-center mt-20">Chefs Special</h1>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-5">
           {Chefscategory.map((category) => (
-            <div
-              key={category.id}
-              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg cursor-pointer hover:scale-105 transition-all duration-500 ease-in-out p-3"
-            >
-              {category.image && <img src={category.image} alt="" />}
-              <div className="p-4 text-left">
-                <h2 className="text-gray-700 text-sm font-medium">
-                  {category.title}
-                </h2>
-                <p className="text-gray-700 text-sm font-medium">
-                  {category.description}
-                </p>
+            <Link to="/productdetails" key={category.id}>
+              <div
+               
+                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg cursor-pointer hover:scale-105 transition-all duration-500 ease-in-out p-3"
+              >
+                {category.image && <img src={category.image} alt="" />}
+                <div className="p-4 text-left">
+                  <h2 className="text-gray-700 text-sm font-medium">
+                    {category.title}
+                  </h2>
+                  <p className="text-gray-700 text-sm font-medium">
+                    {category.description}
+                  </p>
+                </div>
+                <div className="flex items-center justify-between">
+                  <p className="text-orange-500 px-5 font-medium">
+                    {category.price}
+                  </p>
+                  <button className="bg-orange-500 text-white px-5 rounded py-2 font-medium">
+                    Add To Cart
+                  </button>
+                </div>
               </div>
-              <div className="flex items-center justify-between">
-                <p className="text-orange-500 px-5 font-medium">
-                  {category.price}
-                </p>
-                <button className="bg-orange-500 text-white px-5 rounded py-2 font-medium">
-                  Add To Cart
-                </button>
-              </div>
-            </div>
+            </Link>
           ))}
         </div>
         <p className="text-center mt-8 text-blue-400">
@@ -104,23 +104,7 @@ export default function Home() {
           <Link to="/categories">View All Categories</Link>
         </p>
         {/* NEW MENU SECTION */}
-        <section>
-          <div className="mt-10 w-full image py-20 px-5 md:px-10 text-white relative">
-            {/* <img src={jollofs} alt="" className="w-100" /> */}
-            {/* <div className="bg-black/50 absolute z-10"></div> */}
-            <h1 className="font-bold text-[32px] py-4">
-              Introducing Our New Menu Additions!
-            </h1>
-            <p className="font-semibold">
-              Explore exciting new dishes, crafted with the freshest <br />{" "}
-              ingridients and authentic Nigerian flavours, limited time <br />
-              offer!
-            </p>
-            <button className="bg-orange-500 text-white px-5 py-2 rounded mt-5 cursor-pointer hover:bg-orange-600 transition-colors ease-in-out duration-500 font-medium">
-              Discover what's new
-            </button>
-          </div>
-        </section>
+        <NewAdditionBanner />
       </div>
       {/* FOOTER */}
       <Footer />
