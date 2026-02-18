@@ -3,9 +3,25 @@ import Footer from "../components/Footer";
 import ScrollTop from "../components/ScrollToTop";
 import { FaUtensils, FaTruck, FaStore } from "react-icons/fa";
 import onboarding from '../assets/onboarding.svg'
-import {Link} from "react-router-dom"
+import {useEffect} from "react"
+import {Link, useNavigate} from "react-router-dom"
 
 export default function Onboarding() {
+const navigate = useNavigate();
+
+useEffect(() => {
+  const hasOnboarded = localStorage.getItem("hasOnboarded");
+  if (hasOnboarded === "true") {
+    navigate("/home");
+  }
+}, [navigate]);
+
+const handleStartOrder = () => {
+  localStorage.setItem("hasOnboarded", "true");
+  navigate("/home");
+}
+
+
   return (
     <div className="bg-gray-100 min-h-screen flex justify-center p-4">
       <div className="w-full max-w-7xl bg-white shadow-xl overflow-hidden">
@@ -61,11 +77,11 @@ export default function Onboarding() {
 
               {/* BUTTONS */}
               <div className="mt-10 space-y-4 max-w-md flex gap-2 flex-col">
-                <Link to="/home">
-                  <button className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-md font-medium transition">
+                
+                  <button onClick={handleStartOrder} className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-md font-medium transition">
                     Start Your Order
                   </button>
-                </Link>
+               
 
                 <button className="w-full border border-blue-600 text-blue-600 py-3 rounded-md font-medium hover:bg-blue-50 transition">
                   Learn More About Us
