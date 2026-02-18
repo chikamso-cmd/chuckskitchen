@@ -11,7 +11,8 @@ export default function Cartpage() {
       description: "With plantain, extra pepper sauce",
       price: 3200,
       quantity: 1,
-      image: "https://images.unsplash.com/photo-1625943555419-56a2cb596640",
+      image:
+        "https://res.cloudinary.com/dfcr3ut7b/image/upload/v1771194798/image_4_ydv3fy.png",
     },
     {
       id: 2,
@@ -19,7 +20,8 @@ export default function Cartpage() {
       description: "With plantain, extra pepper sauce",
       price: 3200,
       quantity: 1,
-      image: "https://images.unsplash.com/photo-1604908176997-43119e99a27d",
+      image:
+        "https://res.cloudinary.com/dfcr3ut7b/image/upload/v1771194781/Property_1_Default_qgselx.png",
     },
     {
       id: 3,
@@ -27,7 +29,8 @@ export default function Cartpage() {
       description: "With plantain, extra pepper sauce",
       price: 3200,
       quantity: 1,
-      image: "https://images.unsplash.com/photo-1617196034738-26c5e9fa6f5c",
+      image:
+        "https://res.cloudinary.com/dfcr3ut7b/image/upload/v1771194784/Property_1_Variant5_evyqax.png",
     },
     {
       id: 4,
@@ -35,7 +38,8 @@ export default function Cartpage() {
       description: "With plantain, extra pepper sauce",
       price: 3200,
       quantity: 1,
-      image: "https://images.unsplash.com/photo-1625943555419-56a2cb596640",
+      image:
+        "https://res.cloudinary.com/dfcr3ut7b/image/upload/v1771194764/image_3_apuzw5.png",
     },
   ]);
 

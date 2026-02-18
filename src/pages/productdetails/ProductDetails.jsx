@@ -1,9 +1,13 @@
 import { useState } from "react";
 import { X } from "lucide-react";
-import Navbar from "../../components/Navbar"
-import { SectionTitle, RadioOption, CheckboxOption } from "../../components/ui/UI";
+import Navbar from "../../components/Navbar";
+import {
+  SectionTitle,
+  RadioOption,
+  CheckboxOption,
+} from "../../components/ui/UI";
 import Footer from "../../components/Footer";
-import ScrollToTop from "../../components/ScrollToTop"
+import ScrollToTop from "../../components/ScrollToTop";
 
 export default function ProductDetailsPage() {
   const [protein, setProtein] = useState("Fried Chicken");
@@ -16,7 +20,7 @@ export default function ProductDetailsPage() {
       setExtras([...extras, item]);
     }
   };
-CAR381449247750
+
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
@@ -120,7 +124,3 @@ CAR381449247750
     </div>
   );
 }
-
-
-
-
