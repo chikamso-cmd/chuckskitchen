@@ -1,15 +1,17 @@
 import {useState} from 'react'
 import Footer from "../components/Footer";
 import ScrollTop from "../components/ScrollToTop";
-import { FaEnvelope, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaEnvelope, FaLock, FaEye, FaEyeSlash, FaGoogle, FaApple } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import onboarding from "../assets/onboarding.svg";
+import Navbar from "../components/Navbar";
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState (false)
   return (
-    <div className="bg-gray-100 min-h-screen flex justify-center p-4">
-      <div className="w-full max-w-7xl bg-white shadow-xl overflow-hidden">
+    <div className="bg-gray-100 min-h-screen flex justify-center">
+      <Navbar />
+      <div className="w-full max-w-7xl bg-white shadow-xl overflow-hidden mt-30 rounded-lg">
         {/* HERO SECTION */}
         <div className="grid lg:grid-cols-2">
           {/* LEFT SIDE IMAGE WITH OVERLAY */}
@@ -110,16 +112,16 @@ export default function Login() {
                 {/* SOCIAL BUTTONS */}
                 <button
                   type="button"
-                  className="w-full border border-gray-300 py-2.5 rounded-md text-sm hover:bg-gray-50 transition"
+                  className="w-full border border-gray-300 py-2.5 rounded-md text-sm hover:bg-gray-50 transition flex items-center justify-center gap-2"
                 >
-                  Continue with Google
+                 <FaGoogle /> Continue with Google
                 </button>
 
                 <button
                   type="button"
-                  className="w-full border border-gray-300 py-2.5 rounded-md text-sm hover:bg-gray-50 transition"
+                  className="w-full border border-gray-300 py-2.5 rounded-md text-sm hover:bg-gray-50 transition flex items-center justify-center gap-2"
                 >
-                  Continue with Apple
+                 <FaApple /> Continue with Apple
                 </button>
 
                 {/* SIGNUP LINK */}

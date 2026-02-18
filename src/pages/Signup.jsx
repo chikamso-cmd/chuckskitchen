@@ -5,14 +5,16 @@ import { FaEnvelope, FaPhone, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import onboarding from "../assets/onboarding.svg";
 import { BsGoogle, BsApple } from "react-icons/bs";
+import Navbar from "../components/Navbar";
 
 export default function Signup() {
   const [showPassword, setShowPassword] = useState(false);
   const [showPasswordConfirm, setShowConfirmPassword] = useState(false);
 
   return (
-    <div className="bg-gray-100 min-h-screen flex justify-center p-4">
-      <div className="w-full max-w-7xl bg-white shadow-xl overflow-hidden">
+    <div className="bg-gray-100 min-h-screen flex justify-center ">
+      <Navbar />
+      <div className="w-full max-w-7xl bg-white shadow-xl overflow-hidden mt-30">
         {/* HERO SECTION */}
         <div className="grid lg:grid-cols-2">
           {/* LEFT IMAGE WITH ORANGE OVERLAY */}
