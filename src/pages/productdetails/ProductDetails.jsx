@@ -16,16 +16,16 @@ export default function ProductDetailsPage() {
       setExtras([...extras, item]);
     }
   };
-
+CAR381449247750
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <div className="min-h-screen bg-white">
       <Navbar />
 
-      <div className="flex flex-1 flex-col lg:flex-row mt-30">
-        {/* LEFT IMAGE SECTION */}
-        <div className="lg:w-1/2 w-full h-[400px] lg:h-auto">
+      <div className=" flex flex-col pt-30 lg:flex-row justify-center gap-5 p-6">
+        {/* LEFT 10IMAGE SECTION */}
+        <div className=" rounded-lg overflow-hidden border border-gray-200 shadow-lg h-[900px]">
           <img
-            src="https://images.unsplash.com/photo-1625943555419-56a2cb596640"
+            src="https://res.cloudinary.com/dfcr3ut7b/image/upload/v1771432201/Rectangle_22_kikv5e.svg"
             alt="Jollof Rice"
             loading="lazy"
             className="w-full h-full object-cover"
@@ -33,7 +33,7 @@ export default function ProductDetailsPage() {
         </div>
 
         {/* RIGHT PANEL */}
-        <div className="lg:w-1/2 w-full bg-lightGray p-6 flex justify-center">
+        <div className="">
           <div className="w-full max-w-xl bg-white rounded-lg shadow-sm p-6 relative">
             {/* Close button */}
             <button className="absolute top-4 right-4 bg-black text-white p-1 rounded">

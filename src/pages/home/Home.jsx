@@ -33,7 +33,7 @@ export default function Home() {
             Handcrafted with passion, delivered with care.
           </p>
 
-          <button className="mt-6 bg-orange-500 hover:bg-orange-600 px-6 py-2 rounded-md text-sm font-medium w-fit transition">
+          <button className="mt-6 bg-orange-500 hover:bg-orange-600 px-6 py-2 rounded-md text-sm font-medium w-fit transition cursor-pointer">
             Discover what's new
           </button>
         </div>
