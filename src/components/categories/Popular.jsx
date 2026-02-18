@@ -14,6 +14,7 @@ export default function Popular() {
                   <img
                     src={popularproduct.image}
                     alt={popularproduct.title}
+                    loading="lazy"
                     className=" rounded-md md:w-full md:h-auto h-40 w-fit"
                   />
                 )}

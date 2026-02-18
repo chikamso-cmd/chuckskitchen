@@ -2,6 +2,7 @@ import { useState } from "react";
 import Navbar  from "../../components/Navbar";
 import Footer  from "../../components/Footer";
 import ScrollTop from "../../components/ScrollToTop";
+import {Link} from "react-router-dom"
 
 export default function OrderSummary() {
   const [deliveryType, setDeliveryType] = useState("delivery");
@@ -10,8 +11,8 @@ export default function OrderSummary() {
     <div className="min-h-screen bg-lightGray">
       <Navbar />
 
-      <div className="flex justify-center items-start py-10 px-4">
-        <div className="w-full max-w-md bg-white border border-borderGray rounded-lg shadow-sm p-6">
+      <div className="flex justify-center items-start py-10 px-4 ">
+        <div className="w-full max-w-md bg-white border border-borderGray rounded-lg shadow-sm p-6 mt-20">
           {/* Title */}
           <h1 className="text-xl font-semibold mb-6">Order Summary</h1>
 
@@ -19,15 +20,17 @@ export default function OrderSummary() {
           <div className="mb-6">
             <p className="text-sm mb-2">Add a Promo Code</p>
 
-            <div className="flex gap-3">
+            <div className="flex gap-3 flex-col md:flex-row">
               <input
                 type="text"
                 placeholder="Enter Code here"
                 className="flex-1 border border-borderGray rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand"
               />
-              <button className="bg-brand text-white px-5 rounded-md text-sm font-medium hover:opacity-90">
-                Login
-              </button>
+              <Link to="/login">
+                <button className="bg-orange-500 text-white px-5 rounded-md text-sm font-medium hover:opacity-90 py-2 sm:hidden w-full">
+                  Login
+                </button>
+              </Link>
             </div>
           </div>
 
@@ -54,7 +57,7 @@ export default function OrderSummary() {
               onClick={() => setDeliveryType("delivery")}
               className={`flex-1 py-2 text-sm font-medium transition ${
                 deliveryType === "delivery"
-                  ? "bg-brand text-white"
+                  ? "bg-orange-500 text-white"
                   : "text-gray-600"
               }`}
             >
@@ -78,13 +81,13 @@ export default function OrderSummary() {
 
             <textarea
               rows="4"
-              placeholder="E.g no onion, food is too spicy, food is too hot hhhhhhhhhhhh food is tasty"
+              placeholder="E.g no onion, food is too spicy, food is too hot food is tasty"
               className="w-full border border-borderGray rounded-md p-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand resize-none"
             />
           </div>
 
           {/* Checkout Button */}
-          <button className="w-full bg-brand text-white py-3 rounded-md font-medium hover:opacity-90 transition">
+          <button className="w-full bg-orange-500 text-white py-3 rounded-md font-medium hover:opacity-90 transition">
             Proceed to Checkout
           </button>
         </div>

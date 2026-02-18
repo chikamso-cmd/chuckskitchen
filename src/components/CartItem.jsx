@@ -12,7 +12,7 @@ export const CartItem = ({ item, increaseQty, decreaseQty, removeItem}) => {
         />
 
         <div>
-          <h2 className="font-bold text-gray-800 text-[26px]">{item.name}</h2>
+          <h2 className="font-bold text-gray-800 md:text-[26px] text-[16px]">{item.name}</h2>
           <p className="text-sm text-gray-500 font-semibold">{item.description}</p>
         </div>
       </div>
@@ -20,7 +20,7 @@ export const CartItem = ({ item, increaseQty, decreaseQty, removeItem}) => {
       {/* RIGHT SECTION */}
       <div className="flex items-center justify-between w-full md:w-auto gap-6">
         {/* Quantity Stepper */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 md:flex-row flex-row-reverse">
           <button
             onClick={() => decreaseQty(item.id)}
             className="w-7 h-7 flex items-center justify-center bg-gray-200 rounded hover:bg-gray-300"
@@ -48,7 +48,7 @@ export const CartItem = ({ item, increaseQty, decreaseQty, removeItem}) => {
         {/* Remove */}
         <button
           onClick={() => removeItem(item.id)}
-          className="bg-brand text-white w-6 h-6 flex items-center justify-center rounded text-xs hover:opacity-90"
+          className="bg-brand text-white bg-black w-6 h-6 flex items-center justify-center rounded text-xs hover:opacity-90"
         >
           <X size={12} />
         </button>

@@ -21,12 +21,13 @@ export default function ProductDetailsPage() {
     <div className="min-h-screen bg-white flex flex-col">
       <Navbar />
 
-      <div className="flex flex-1 flex-col lg:flex-row">
+      <div className="flex flex-1 flex-col lg:flex-row mt-30">
         {/* LEFT IMAGE SECTION */}
         <div className="lg:w-1/2 w-full h-[400px] lg:h-auto">
           <img
             src="https://images.unsplash.com/photo-1625943555419-56a2cb596640"
             alt="Jollof Rice"
+            loading="lazy"
             className="w-full h-full object-cover"
           />
         </div>

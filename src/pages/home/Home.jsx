@@ -78,7 +78,7 @@ export default function Home() {
                
                 className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg cursor-pointer hover:scale-105 transition-all duration-500 ease-in-out p-3"
               >
-                {category.image && <img src={category.image} alt="" />}
+                {category.image && <img src={category.image} alt="" loading="lazy"/>}
                 <div className="p-4 text-left">
                   <h2 className="text-gray-700 text-sm font-medium">
                     {category.title}

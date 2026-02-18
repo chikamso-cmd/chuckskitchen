@@ -18,6 +18,7 @@ export default function Jollof() {
                     src={jollof.image}
                     alt={jollof.title}
                     className="w-full"
+                    loading='lazy'
                   />
                 )}
               </div>

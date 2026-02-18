@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navbar  from "../../components/Navbar";
+import Footer  from "../../components/Footer";
 import { CartItem } from "../../components/CartItem";
 
 export default function Cartpage() {
@@ -65,7 +66,7 @@ export default function Cartpage() {
       <Navbar />
 
       <div className="max-w-6xl mx-auto p-4 md:p-8 ">
-        <div className="bg-white rounded-md shadow-sm p-6 mt-25">
+        <div className="bg-white rounded-md shadow-sm p-6 mt-25 ">
           <h1 className="text-xl font-semibold mb-6">Your Cart</h1>
 
           <div className="space-y-4">
@@ -85,6 +86,7 @@ export default function Cartpage() {
           </button>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

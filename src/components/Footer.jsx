@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <footer className="bg-[#6B4226] text-white px-10 ">
-      <section className="px-10 py-14 grid md:grid-cols-4 gap-10">
+    <footer className="bg-[#6B4226] text-white px-5 ">
+      <section className="py-14 grid md:grid-cols-4 gap-10">
         {/* BRAND */}
         <div>
           <h3 className="text-orange-400 italic text-lg">Chuks Kitchen</h3>

@@ -15,6 +15,7 @@ export default function Jollof() {
                     src={swallow.image}
                     alt={swallow.title}
                     className="w-full"
+                    loading="lazy"
                   />
                 )}
               </div>
