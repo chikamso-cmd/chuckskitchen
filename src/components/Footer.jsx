@@ -42,7 +42,7 @@ export default function Footer() {
       </section>
 
       <p className="mt-8 text-xs text-gray-300 text-center border-t pt-4 px-10 pb-5">
-        © {new Date().getFullYear()} Link Media. All rights reserved.
+        © {new Date().getFullYear()} Chucks Kitchen. All rights reserved.
       </p>
     </footer>
   );

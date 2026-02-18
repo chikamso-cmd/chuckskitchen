@@ -1,10 +1,11 @@
-import Feature from "../components/Feature";
+import Feature from "../components/Features";
 import Footer from "../components/Footer";
-import ScrollTop from "../components/ScrollTop";
+import ScrollTop from "../components/ScrollToTop";
 import { FaUtensils, FaTruck, FaStore } from "react-icons/fa";
 import onboarding from '../assets/onboarding.svg'
+import {Link} from "react-router-dom"
 
-export default function Home() {
+export default function Onboarding() {
   return (
     <div className="bg-gray-100 min-h-screen flex justify-center p-4">
       <div className="w-full max-w-7xl bg-white shadow-xl overflow-hidden">
@@ -32,9 +33,11 @@ export default function Home() {
                 Chuks Kitchen
               </h1>
 
-              <button className="border border-blue-600 text-blue-600 px-6 py-2 rounded-md text-sm hover:bg-blue-50 transition">
-                Sign In
-              </button>
+              <Link to="/login">
+                <button className="border border-blue-600 text-blue-600 px-6 py-2 rounded-md text-sm hover:bg-blue-50 transition">
+                  Sign In
+                </button>
+              </Link>
             </div>
 
             {/* CONTENT */}
@@ -57,10 +60,12 @@ export default function Home() {
               </div>
 
               {/* BUTTONS */}
-              <div className="mt-10 space-y-4 max-w-md">
-                <button className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-md font-medium transition">
-                  Start Your Order
-                </button>
+              <div className="mt-10 space-y-4 max-w-md flex gap-2 flex-col">
+                <Link to="/home">
+                  <button className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-md font-medium transition">
+                    Start Your Order
+                  </button>
+                </Link>
 
                 <button className="w-full border border-blue-600 text-blue-600 py-3 rounded-md font-medium hover:bg-blue-50 transition">
                   Learn More About Us

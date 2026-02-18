@@ -17,10 +17,6 @@ export default function Categories() {
       <div className="relative">
         {/* Background Image */}
         <div className="h-[420px] bg-cover bg-center hero">
-          {/* <img
-            src="https://res.cloudinary.com/dfcr3ut7b/image/upload/v1771271262/1a88f71f96c9b980f6e0e126c827db7ea7079001_z7xm05.png"
-            alt="Hero Image"
-          /> */}
           <div className="absolute inset-0 bg-black/50  "></div>
         </div>
 

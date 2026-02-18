@@ -73,30 +73,34 @@ export default function Home() {
         <h1 className="text-center mt-20">Chefs Special</h1>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-5">
           {Chefscategory.map((category) => (
-            <Link to="/productdetails" key={category.id}>
-              <div
-               
-                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg cursor-pointer hover:scale-105 transition-all duration-500 ease-in-out p-3"
-              >
-                {category.image && <img src={category.image} alt="" loading="lazy"/>}
-                <div className="p-4 text-left">
-                  <h2 className="text-gray-700 text-sm font-medium">
-                    {category.title}
-                  </h2>
-                  <p className="text-gray-700 text-sm font-medium">
-                    {category.description}
-                  </p>
+            <div
+              key={category.id}
+              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg cursor-pointer hover:scale-105 transition-all duration-500 ease-in-out p-3"
+            >
+              <Link to="/productdetails">
+                <div>
+                  {category.image && (
+                    <img src={category.image} alt="" loading="lazy" />
+                  )}
+                  <div className="p-4 text-left">
+                    <h2 className="text-gray-700 text-sm font-medium">
+                      {category.title}
+                    </h2>
+                    <p className="text-gray-700 text-sm font-medium">
+                      {category.description}
+                    </p>
+                  </div>
                 </div>
-                <div className="flex items-center justify-between">
-                  <p className="text-orange-500 px-5 font-medium">
-                    {category.price}
-                  </p>
-                  <button className="bg-orange-500 text-white px-5 rounded py-2 font-medium">
-                    Add To Cart
-                  </button>
-                </div>
+              </Link>
+              <div className="flex items-center justify-between">
+                <p className="text-orange-500 px-5 font-medium">
+                  {category.price}
+                </p>
+                <button className="bg-orange-500 text-white px-5 rounded py-2 font-medium">
+                  Add To Cart
+                </button>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
         <p className="text-center mt-8 text-blue-400">

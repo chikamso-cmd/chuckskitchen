@@ -12,6 +12,7 @@ export default function Navbar() {
     { name: "Explore", path: "/categories" },
     { name: "My Orders", path: "/ordersummary" },
     { name: "Account", path: "/account" },
+    { name: "Cart", path: "/cart" },
   ];
 
   return (
