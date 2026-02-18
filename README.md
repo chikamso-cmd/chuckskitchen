@@ -10,12 +10,14 @@ A modern, responsive food ordering web application built with React and Vite. Br
 ## ✨ Features
 
 - 🍽️ Browse food categories (Jollof, Swallow, Popular dishes)
-- 🛒 Add/remove items from shopping cart
+- 🛒 Add/remove items from shopping cart with real-time updates
 - 👤 User authentication (Login & Signup)
-- 📱 Fully responsive design
+- 📱 Fully responsive design optimized for all devices
 - ⚡ Fast and smooth animations with Framer Motion
 - 🔄 Real-time cart management
-- 📝 Product details and order summary pages
+- 📝 Detailed product pages with customization options (protein selection, extras, special instructions)
+- 📋 Order summary and checkout flow
+- 🎨 Clean, modern UI with intuitive user interface
 
 ## 📁 Project Structure
 
@@ -72,7 +74,8 @@ Chucks-Kitchen/
 - **React Router DOM** - Client-side routing and navigation
 - **Framer Motion** - Smooth animations and transitions
 - **React Icons** - Scalable vector icon library
-- **Tailwind CSS** - Styling and responsive design
+- **Tailwind CSS** - Responsive design and styling
+- **Lucide React** - Beautiful icon library
 
 ## 📦 Installation
 
@@ -104,6 +107,23 @@ npm run dev
 - `npm run preview` - Preview production build
 - `npm run lint` - Run ESLint code quality checks
 
-## 📄 License
+## � Recent Updates
+
+- ✅ Improved ProductDetails page layout with optimized image display
+- ✅ Fixed image alignment and overflow issues
+- ✅ Enhanced responsive design for product customization section
+- ✅ Better mobile and desktop viewing experience
+
+## 🚀 Getting Started
+
+To explore the application:
+
+1. Browse categories or search for your favorite dishes
+2. Click on any dish to view detailed product information
+3. Customize your order (select protein, add extras, add special instructions)
+4. Add items to your cart
+5. Proceed to checkout and complete your order
+
+## �📄 License
 
 This project is open source and available for public use.

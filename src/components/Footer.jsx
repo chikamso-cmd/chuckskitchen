@@ -4,7 +4,7 @@ export default function Footer() {
       <section className="py-14 grid md:grid-cols-4 gap-10">
         {/* BRAND */}
         <div>
-          <h3 className="text-orange-400 italic text-lg">Chuks Kitchen</h3>
+          <h3 className="text-orange-400 italic md:text-[30px] text-[20px]">Chuks Kitchen</h3>
           <p className="mt-4 text-sm leading-relaxed text-gray-200 max-w-xs">
             Bringing the authentic flavors of Nigerian home cooking to your
             table, with passion and care.

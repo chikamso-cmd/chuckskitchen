@@ -8,10 +8,10 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: "Home", path: "/" },
+    { name: "Home", path: "/home" },
     { name: "Explore", path: "/categories" },
     { name: "My Orders", path: "/ordersummary" },
-    { name: "Account", path: "/account" },
+    { name: "Account", path: "#" },
     { name: "Cart", path: "/cart" },
   ];
 
@@ -22,7 +22,7 @@ export default function Navbar() {
         <h1 className="text-orange-500 italic font-semibold">Chuks Kitchen</h1>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center space-x-8 text-sm">
+        <div className="hidden md:flex items-center justify-between space-x-8 text-sm">
           {navLinks.map((link) => (
             <NavLink
               key={link.name}

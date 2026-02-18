@@ -80,7 +80,7 @@ export default function Home() {
               <Link to="/productdetails">
                 <div>
                   {category.image && (
-                    <img src={category.image} alt="" loading="lazy" />
+                    <img src={category.image} alt="" loading="lazy" className="w-full rounded-t"/>
                   )}
                   <div className="p-4 text-left">
                     <h2 className="text-gray-700 text-sm font-medium">

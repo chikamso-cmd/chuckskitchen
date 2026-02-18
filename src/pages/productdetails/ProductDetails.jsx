@@ -25,8 +25,8 @@ export default function ProductDetailsPage() {
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      <div className=" flex flex-col pt-30 lg:flex-row justify-center gap-5 p-6">
-        {/* LEFT 10IMAGE SECTION */}
+      <div className="flex flex-col lg:flex-row justify-center pt-30 lg:flex-row justify-center gap-5 p-6">
+        {/* LEFT IMAGE SECTION */}
         <div className=" rounded-lg overflow-hidden border border-gray-200 shadow-lg h-[900px]">
           <img
             src="https://res.cloudinary.com/dfcr3ut7b/image/upload/v1771432201/Rectangle_22_kikv5e.svg"
@@ -37,8 +37,8 @@ export default function ProductDetailsPage() {
         </div>
 
         {/* RIGHT PANEL */}
-        <div className="">
-          <div className="w-full max-w-xl bg-white rounded-lg shadow-sm p-6 relative">
+        <div className="grid place-items-center w-full lg:max-w-lg md:w-full">
+          <div className="w-full bg-white rounded-lg shadow-sm p-6 relative">
             {/* Close button */}
             <button className="absolute top-4 right-4 bg-black text-white p-1 rounded">
               <X size={16} />

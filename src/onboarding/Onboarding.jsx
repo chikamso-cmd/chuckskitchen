@@ -42,10 +42,9 @@ const handleStartOrder = () => {
           <div className="bg-gray-100 px-12 py-10 flex flex-col justify-between">
 
             {/* TOP BAR */}
-            <div className="flex justify-between items-center">
-              <div></div>
+            <div className="flex  items-center justify-between p-4 md:p-0">
 
-              <h1 className="absolute left-1/2 -translate-x-1/2 text-orange-500 italic text-lg tracking-wide">
+              <h1 className="  text-orange-500 italic text-lg font-normal">
                 Chuks Kitchen
               </h1>
 
@@ -69,14 +68,14 @@ const handleStartOrder = () => {
               </p>
 
               {/* FEATURES */}
-              <div className="grid sm:grid-cols-2 gap-x-8 gap-y-6 mt-8">
+              <div className="grid sm:grid-cols-3 gap-x-8 gap-y-6 mt-8">
                 <Feature icon={<FaUtensils />} text="Freshly Prepared" />
                 <Feature icon={<FaStore />} text="Support Local Business" />
                 <Feature icon={<FaTruck />} text="Fast & Reliable Delivery" />
               </div>
 
               {/* BUTTONS */}
-              <div className="mt-10 space-y-4 max-w-md flex gap-2 flex-col">
+              <div className="mt-10 space-y-4 max-w-full flex gap-2 flex-col">
                 
                   <button onClick={handleStartOrder} className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-md font-medium transition">
                     Start Your Order
@@ -86,19 +85,6 @@ const handleStartOrder = () => {
                 <button className="w-full border border-blue-600 text-blue-600 py-3 rounded-md font-medium hover:bg-blue-50 transition">
                   Learn More About Us
                 </button>
-              </div>
-            </div>
-
-            {/* COPYRIGHT */}
-            <div className="pt-12 text-xs text-gray-500 flex justify-between border-t mt-12">
-              <span>© {new Date().getFullYear()} Chuks Kitchen.</span>
-              <div className="space-x-4">
-                <a href="#" className="hover:text-gray-700">
-                  Privacy Policy
-                </a>
-                <a href="#" className="hover:text-gray-700">
-                  Terms of Service
-                </a>
               </div>
             </div>
           </div>
