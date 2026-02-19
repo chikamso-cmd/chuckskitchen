@@ -8,10 +8,28 @@ import {
 } from "../../components/ui/UI";
 import Footer from "../../components/Footer";
 import ScrollToTop from "../../components/ScrollToTop";
+import { useLocation, useParams } from "react-router-dom";
+import {
+  JollofRices,
+  Swallow_Soup,
+  popularproducts,
+} from "../../components/Constants";
 
 export default function ProductDetailsPage() {
   const [protein, setProtein] = useState("Fried Chicken");
   const [extras, setExtras] = useState([]);
+  // fetching product by id from the products array
+  const { id } = useParams();
+  const { state } = useLocation();
+  const products = [...popularproducts, ...JollofRices, ...Swallow_Soup];
+  const product =
+    state?.product || products.find((item) => item.id === Number(id));
+
+  if (!product) {
+    return <h1>Product not found</h1>;
+  }
+
+ 
 
   const toggleExtra = (item) => {
     if (extras.includes(item)) {
@@ -28,12 +46,15 @@ export default function ProductDetailsPage() {
       <div className="flex flex-col lg:flex-row justify-center pt-30 lg:flex-row justify-center gap-5 p-6">
         {/* LEFT IMAGE SECTION */}
         <div className=" rounded-lg overflow-hidden border border-gray-200 shadow-lg h-[900px]">
-          <img
-            src="https://res.cloudinary.com/dfcr3ut7b/image/upload/v1771432201/Rectangle_22_kikv5e.svg"
-            alt="Jollof Rice"
-            loading="lazy"
-            className="w-full h-full object-cover"
-          />
+         
+          {product.image && (
+            <img
+              src={product.image}
+              alt={product.title}
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+          )}
         </div>
 
         {/* RIGHT PANEL */}
@@ -44,17 +65,14 @@ export default function ProductDetailsPage() {
               <X size={16} />
             </button>
 
-            <h1 className="text-2xl font-semibold mb-2">
-              Jollof Rice with Fried Chicken
-            </h1>
+            <h1 className="text-2xl font-semibold mb-2">{product.title}</h1>
 
-            <p className="text-brand text-xl font-semibold mb-4">₦2,800</p>
+            <p className="text-brand text-xl font-semibold mb-4">
+              {product.price}
+            </p>
 
             <p className="text-gray-600 text-sm leading-relaxed mb-6">
-              Our signature Jollof rice, cooked to perfection with aromatic
-              spices, served with juicy, golden-fried chicken. A classic
-              Nigerian comfort food, rich in flavor and satisfying. Perfect for
-              a quick lunch or a hearty dinner.
+              {product.description}
             </p>
 
             {/* Tags */}

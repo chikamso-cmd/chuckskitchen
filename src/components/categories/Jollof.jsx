@@ -6,13 +6,17 @@ import { Link } from "react-router-dom";
 export default function Jollof() {
   return (
     <div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-5">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-5  px-6 md:px-16">
         {JollofRices.map((jollof) => (
           <div
             key={jollof.id}
             className="bg-white rounded-lg p-2 flex md:flex-col md:p-5 items-center gap-5 py-3 hover:shadow-lg cursor-pointer hover:scale-105 transition-all duration-500 ease-in-out"
           >
-            <Link to="/productdetails">
+            <Link
+              to={`/productdetails/${jollof.id}`}
+              state={{ product: jollof }}
+              className="w-full"
+            >
               <div className="w-fit rounded-md md:w-full md:h-auto">
                 {jollof.image && (
                   <img

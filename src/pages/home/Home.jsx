@@ -8,7 +8,7 @@ import swallow from "../../assets/swallow.svg";
 import grills from "../../assets/grills.svg";
 import sweet from "../../assets/sweet.svg";
 import { Chefscategory } from "../../components/Constants";
-import {Link} from "react-router-dom" 
+import { Link } from "react-router-dom";
 import NewAdditionBanner from "../../components/NewAdditionBanner";
 
 export default function Home() {
@@ -52,12 +52,12 @@ export default function Home() {
       </div>
 
       {/* CATEGORIES SECTION */}
-      <div className="pt-20 pb-16 px-6 md:px-16">
+      <div className="pt-20 pb-16 ">
         <h2 className="text-center text-gray-800 font-semibold text-lg mb-10">
           Popular Categories
         </h2>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 md:px-16">
           <CategoryCard title="Jollof Delights" image={jollofs} />
           <CategoryCard title="Swallow & Soups" image={swallow} />
           <CategoryCard title="Grills & BBQ" image={grills} />
@@ -71,16 +71,25 @@ export default function Home() {
         </p>
         {/*  CHEFS SPECIAL CATEGORIES SECTION */}
         <h1 className="text-center mt-20">Chefs Special</h1>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-5 px-6 md:px-16">
           {Chefscategory.map((category) => (
             <div
               key={category.id}
               className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg cursor-pointer hover:scale-105 transition-all duration-500 ease-in-out p-3"
             >
-              <Link to="/productdetails">
+              <Link
+                to={`/productdetails/${category.id}`}
+                state={{ product: category }}
+                className="w-full"
+              >
                 <div>
                   {category.image && (
-                    <img src={category.image} alt="" loading="lazy" className="w-full rounded-t"/>
+                    <img
+                      src={category.image}
+                      alt=""
+                      loading="lazy"
+                      className="w-full rounded-t"
+                    />
                   )}
                   <div className="p-4 text-left">
                     <h2 className="text-gray-700 text-sm font-medium">
@@ -108,7 +117,9 @@ export default function Home() {
           <Link to="/categories">View All Categories</Link>
         </p>
         {/* NEW MENU SECTION */}
-        <NewAdditionBanner />
+        <div className="">
+          <NewAdditionBanner />
+        </div>
       </div>
       {/* FOOTER */}
       <Footer />

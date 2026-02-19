@@ -53,7 +53,7 @@ export default function Categories() {
         </select>
       </div>
       {/* CATEGORIES SECTION */}
-      <div className="pt-20 pb-16 px-6 md:px-16">
+      <div className="pt-20 pb-16">
         <h2 className="text-center text-gray-800 font-semibold text-lg mb-10">
           Popular Categories
         </h2>

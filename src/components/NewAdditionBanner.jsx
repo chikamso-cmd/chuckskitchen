@@ -2,7 +2,7 @@ import React from "react";
 
 export default function NewAdditionBanner() {
   return (
-    <section>
+    <section className=""> 
       <div className="mt-10 w-full image py-20 px-5 md:px-10 text-white relative">
         {/* overlay */}
         <div className="absolute inset-0 bg-gray-900/70 flex flex-col justify-center items-left px-10 ">
